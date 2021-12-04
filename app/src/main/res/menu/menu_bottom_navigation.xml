@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_watchlist"
+        android:icon="@drawable/ic_watchlist"
+        android:enabled="true"
+        android:title="Watchlist"/>
+
+    <item
+        android:id="@+id/navigation_markets"
+        android:icon="@drawable/ic_markets"
+        android:enabled="true"
+        android:title="Markets"/>
+
+    <item
+        android:id="@+id/navigation_trade"
+        android:icon="@drawable/ic_trade"
+        android:enabled="true"
+        android:title="Trade"/>
+
+    <item
+        android:id="@+id/navigation_discover"
+        android:icon="@drawable/ic_discover"
+        android:enabled="true"
+        android:title="Discover"/>
+
+    <item
+        android:id="@+id/navigation_me"
+        android:icon="@drawable/ic_me"
+        android:enabled="true"
+        android:title="Me"/>
+</menu>

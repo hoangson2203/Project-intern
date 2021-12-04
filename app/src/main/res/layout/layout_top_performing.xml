@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="109dp"
+    android:layout_height="112dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/bg_hot_stocks"
+    android:paddingStart="16dp">
+
+    <TextView
+        android:id="@+id/tvIndicesTopPerforming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Property"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPercentNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+4.18%"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvIndicesTopPerforming"
+        app:layout_constraintStart_toStartOf="@id/tvIndicesTopPerforming"/>
+
+    <TextView
+        android:id="@+id/tvNameProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ho Bee Land"
+        android:textColor="#999999"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPercentNumber"
+        app:layout_constraintStart_toStartOf="@id/tvPercentNumber" />
+
+    <TextView
+        android:id="@+id/tvCounterChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.770  +1.09%"
+        android:textColor="@color/green"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvNameProduct"
+        app:layout_constraintStart_toStartOf="@id/tvNameProduct"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

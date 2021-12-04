@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PoemsLesson1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stocksLabel">Stocks</string>
+    <string name="usLabel">US</string>
+    <string name="sgLabel">SG</string>
+    <string name="hkLabel">HK</string>
+    <string name="todoLabel">TODO</string>
+    <string name="earningsLabel">Earnings</string>
+    <string name="dividendsLabel">Dividends</string>
+    <string name="screenerLabel">Screener</string>
+    <string name="today_s_hot_stocksLabel">Today’s Hot Stocks</string>
+    <string name="top_tradedLabel">Top Traded</string>
+    <string name="top_searchedLabel">Top Searched</string>
+    <string name="top_performing_industriesLabel">Top Performing Industries</string>
+    <string name="_1_dayLabel">1 Day</string>
+    <string name="_1_weekLabel">1 Week</string>
+    <string name="_1_monthLabel">1 Month</string>
+    <string name="_6_monthsLabel">6 Months</string>
+    <string name="top_gainersLabel">Top Gainers</string>
+    <string name="nameLabel">Name</string>
+    <string name="priceLabel">Price</string>
+    <string name="changeLabel">% Change</string>
+    <string name="top_losersLabel">Top Losers</string>
+</resources>

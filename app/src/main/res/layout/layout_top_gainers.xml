@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:paddingStart="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvLayoutTopLosers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shanghai Turbo"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Symbol"
+        android:textColor="#ADADAD"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvLayoutTopLosers"
+        app:layout_constraintStart_toStartOf="@id/tvLayoutTopLosers"/>
+
+    <TextView
+        android:id="@+id/tvPriceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.6"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="130dp"
+        app:layout_constraintStart_toEndOf="@id/tvLayoutTopLosers"
+        app:layout_constraintTop_toTopOf="@id/tvLayoutTopLosers"
+        app:layout_constraintBottom_toBottomOf="@id/tvSymbol"/>
+
+    <TextView
+        android:id="@+id/tvChangeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+27.65"
+        android:textColor="#00D796"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPriceNumber"
+        app:layout_constraintBottom_toBottomOf="@id/tvPriceNumber"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0F1B"
+    tools:context=".stockScreen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvProductSg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_blue_product"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/sgLabel"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvProductUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_gray_product"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:text="@string/usLabel"
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/tvProductSg"
+            app:layout_constraintStart_toEndOf="@id/tvProductSg"
+            app:layout_constraintTop_toTopOf="@id/tvProductSg" />
+
+        <TextView
+            android:id="@+id/tvProductHk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_gray_product"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:text="@string/hkLabel"
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/tvProductUs"
+            app:layout_constraintStart_toEndOf="@id/tvProductUs"
+            app:layout_constraintTop_toTopOf="@id/tvProductUs" />
+
+        <ImageView
+            android:id="@+id/imgSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6.5dp"
+            android:background="@drawable/ic_setting"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvProductHk"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvProductHk" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalSvIndices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductSg">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/layout_indices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    layout="@layout/layout_indices"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    layout="@layout/layout_indices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/imgEarnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/ic_earnings"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalSvIndices" />
+
+        <TextView
+            android:id="@+id/tvEarnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/earningsLabel"
+            android:textColor="#999999"
+            app:layout_constraintEnd_toEndOf="@id/imgEarnings"
+            app:layout_constraintStart_toStartOf="@id/imgEarnings"
+            app:layout_constraintTop_toBottomOf="@id/imgEarnings" />
+
+        <ImageView
+            android:id="@+id/imgDividends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:background="@drawable/ic_dividends"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/imgEarnings"
+            app:layout_constraintStart_toEndOf="@id/imgEarnings"
+            app:layout_constraintTop_toTopOf="@id/imgEarnings" />
+
+        <TextView
+            android:id="@+id/tvDividends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/dividendsLabel"
+            android:textColor="#999999"
+            app:layout_constraintEnd_toEndOf="@id/imgDividends"
+            app:layout_constraintStart_toStartOf="@id/imgDividends"
+            app:layout_constraintTop_toBottomOf="@id/imgDividends" />
+
+        <ImageView
+            android:id="@+id/imgScreener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:background="@drawable/ic_screener"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/imgDividends"
+            app:layout_constraintStart_toEndOf="@id/imgDividends"
+            app:layout_constraintTop_toTopOf="@id/imgDividends" />
+
+        <TextView
+            android:id="@+id/tvScreener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/screenerLabel"
+            android:textColor="#999999"
+            app:layout_constraintEnd_toEndOf="@id/imgScreener"
+            app:layout_constraintStart_toStartOf="@id/imgScreener"
+            app:layout_constraintTop_toBottomOf="@id/imgScreener" />
+
+        <TextView
+            android:id="@+id/tvHotStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="@string/today_s_hot_stocksLabel"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvProductSg"
+            app:layout_constraintTop_toBottomOf="@id/tvEarnings" />
+
+        <ImageView
+            android:id="@+id/imgArrowRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_right"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvHotStocks"
+            app:layout_constraintEnd_toEndOf="@id/imgSetting"
+            app:layout_constraintTop_toTopOf="@id/tvHotStocks" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/bg_gray"
+            app:layout_constraintStart_toStartOf="@id/tvHotStocks"
+            app:layout_constraintTop_toBottomOf="@id/tvHotStocks">
+
+            <TextView
+                android:id="@+id/tvTopTrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_blue"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/top_tradedLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvTopSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/top_searchedLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalSvHotStock"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/layout_hot_stocks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    layout="@layout/layout_hot_stocks"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    layout="@layout/layout_hot_stocks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tvTopPerfoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/top_performing_industriesLabel"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@id/horizontalSvHotStock" />
+
+        <ImageView
+            android:id="@+id/imgArrowRight2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_right"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopPerfoming"
+            app:layout_constraintEnd_toEndOf="@id/imgArrowRight"
+            app:layout_constraintTop_toTopOf="@id/tvTopPerfoming" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lLDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/bg_gray"
+            app:layout_constraintStart_toStartOf="@id/tvTopPerfoming"
+            app:layout_constraintTop_toBottomOf="@id/tvTopPerfoming">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_blue"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_dayLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_weekLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_monthLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_6_monthsLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopPerforming"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/lLDay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            tools:listitem="@layout/layout_top_performing"/>
+
+        <TextView
+            android:id="@+id/tvTopGainers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/top_gainersLabel"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tvTopPerfoming"
+            app:layout_constraintTop_toBottomOf="@id/rvTopPerforming" />
+
+        <ImageView
+            android:id="@+id/imgArrowRight3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_right"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopGainers"
+            app:layout_constraintEnd_toEndOf="@id/imgArrowRight2"
+            app:layout_constraintTop_toTopOf="@id/tvTopGainers" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lLDay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/bg_gray"
+            app:layout_constraintStart_toStartOf="@id/tvTopGainers"
+            app:layout_constraintTop_toBottomOf="@id/tvTopGainers">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_blue"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_dayLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_weekLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_monthLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_6_monthsLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/tvNameGainers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/nameLabel"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/lLDay2"
+            app:layout_constraintTop_toBottomOf="@id/lLDay2" />
+
+        <TextView
+            android:id="@+id/tvPriceGainers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:text="@string/priceLabel"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvNameGainers"
+            app:layout_constraintStart_toEndOf="@id/tvNameGainers"
+            app:layout_constraintTop_toTopOf="@id/tvNameGainers" />
+
+        <TextView
+            android:id="@+id/tvChangeGainers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/changeLabel"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPriceGainers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPriceGainers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopGainers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNameGainers"
+            tools:listitem="@layout/layout_top_gainers" />
+
+        <TextView
+            android:id="@+id/tvTopLosers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/top_losersLabel"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvTopGainers"
+            app:layout_constraintTop_toBottomOf="@id/rvTopGainers" />
+
+        <ImageView
+            android:id="@+id/imgArrowRight4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_right"
+            android:contentDescription="@string/todoLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvTopLosers"
+            app:layout_constraintEnd_toEndOf="@id/imgArrowRight3"
+            app:layout_constraintTop_toTopOf="@id/tvTopLosers" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lLDay3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/bg_gray"
+            app:layout_constraintStart_toStartOf="@id/tvTopLosers"
+            app:layout_constraintTop_toBottomOf="@id/tvTopLosers">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_blue"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_dayLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_weekLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_1_monthLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/_6_monthsLabel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/tvNameLosers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/nameLabel"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/lLDay3"
+            app:layout_constraintTop_toBottomOf="@+id/lLDay3" />
+
+        <TextView
+            android:id="@+id/tvPriceLosers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:text="@string/priceLabel"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvNameLosers"
+            app:layout_constraintStart_toEndOf="@id/tvNameLosers"
+            app:layout_constraintTop_toTopOf="@id/tvNameLosers" />
+
+        <TextView
+            android:id="@+id/tvChangeLosers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/changeLabel"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPriceLosers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPriceLosers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopLoser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameLosers"
+            tools:listitem="@layout/layout_top_losers" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
